@@ -1,0 +1,80 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple PB95 Encrypt/Decrypt</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Simple PB95 Encrypt/Decrypt</h1>
+        
+        <div class="tabs">
+            <button id="keyTab" class="tab active">Key</button>
+            
+            <button id="editorTab" class="tab">Encrypt/Decrypt</button>
+          <button id="infoTab" class="tab">Info</button>
+        </div>
+
+        <div id="keyPanel" class="panel active">
+            <div class="input-group">
+                <label for="keyInput">Insert key:</label>
+                <textarea id="keyInput" rows="3" placeholder="Enter your key here..."></textarea>
+            </div>
+            <button id="saveKeyButton">Save Key</button>
+            <div class="messages" id="keyMessages"></div>
+        </div>
+
+        <div id="infoPanel" class="panel">
+          If you have any issues, write them in the Reddit comments or the <a href="https://github.com/tttsetsy2/tttsetsy2.github.io/issues" target="_blank" rel="noopener noreferrer">github issues</a>
+            <h2>To begin</h2>
+            
+            <ol>
+                <li>Insert your key in the Key tab</li>
+                
+            </ol>
+            <h2>Decrypting Your Save</h2>
+            <ol>
+                <li>Run save_editor.py</li>
+                <li>Open the savedata.txt file located at: <code>%appdata%\Spooky House Studios UG (haftungsbeschränkt)\Progressbar95\Documents\savedata.txt</code></li>
+                
+                <li>The program will create a file named <strong>decrypted_save.txt</strong></li>
+            </ol>
+
+            <h2>Editing Your Save</h2>
+            <ol>
+                <li>Open <strong>decrypted_save.txt</strong> with any text editor</li>
+                <li>Make your desired changes to the save data</li>
+                <li>Save and close the file</li>
+            </ol>
+
+            <h2>Re-encrypting Your Save</h2>
+            <ol>
+                <li>Run the save editor again</li>
+                <li>Click the <strong>Encrypt</strong> button</li>
+                <li>Copy <code>%appdata%\Spooky House Studios UG (haftungsbeschraenkt)\Progressbar95</code> and paste it inside of the Run (Win+R) box</li>
+                <li>Copy and paste the Documents folder as a backup</li>
+                <li>Enter the Documents folder and, if you backed the Documents folder, delete the original <strong>savedata.txt</strong></li>
+                <li>Copy the <strong>encrypted_save.txt</strong> here and rename it to savedata.txt</li>
+                <li>Launch Progressbar95 to play with your modified save</li>
+            </ol>
+        </div>
+
+        <div id="editorPanel" class="panel">
+            <div class="file-input-group">
+                <label for="fileUpload">Choose a file:</label>
+                <input type="file" id="fileUpload" accept=".txt">
+            </div>
+
+            <div class="button-group">
+                <button id="decryptButton">Decrypt Save</button>
+                <button id="encryptButton">Encrypt Save</button>
+            </div>
+
+            <div class="messages" id="messages"></div>
+        </div>
+    </div>
+
+    <script type="module" src="app.js"></script>
+</body>
+</html>
